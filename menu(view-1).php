@@ -255,7 +255,7 @@
                    <ul style="list-style:none;">
                    	
                    
-                   <li style="float:left; height:20px;"><a href="updateproduct.php"><i class="fa fa-edit"></i></a></li>
+                   <li style="float:left; height:20px;"><a href="updateproduct.php?id='.$row['id'].'"><i class="fa fa-edit"></i></a></li>
                    <li style="float:left" height:20px;><a class="cart-fore" href="proinfo.php?view='.$id.'"><i class="fa fa-info"></i></a></li>
                    <li style="float:left;"><a href="delete.php?id='.$row['id'].'" onclick="return delete()"><i class="fa fa-trash-o"></i></a></li>
                    </ul>
@@ -323,7 +323,7 @@
 										</ul>
 
 										<div class="checkout">
-											<a class="btn btn-default-red" href="#"><i class="fa fa-shopping-cart"></i>Checkout</a>
+											<a class="btn btn-default-red" href=""><i class="fa fa-shopping-cart"></i>Checkout</a>
 										</div>
 									</div>
 									<!--end .slide-toggle -->

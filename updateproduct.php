@@ -50,7 +50,7 @@ $insert = "UPDATE `add_product` SET `product name`='$productname',`price`='$pric
 $run_query = mysqli_query($conn, $insert);
 if ($run_query) {
 move_uploaded_file($_FILES['image']['tmp_name'],$target);
-echo'<script>window.location="product.php";</script>';
+echo'<script>window.location="menu(view-1).php";</script>';
 }
 else{
 $h = 'szgrsgzb';

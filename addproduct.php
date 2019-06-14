@@ -8,10 +8,12 @@
               $desc = $_POST['desc'];
               $image = $_POST['image'];
               $category = $_POST['category'];
+             
               date_default_timezone_set('Asia/Kolkata');
               $date = date('d-m-y');
               $time = date('h:i:s');
               $status = "0";
+
 
               $target = "assets/img/product/" .basename($_FILES['image']['name']);
 

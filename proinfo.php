@@ -11,6 +11,7 @@ if(isset($_REQUEST["view"]) && isset($_REQUEST["view"]) != "")
   $pprice=$row['price'];
   $desc=$row['description'];
   $img=$row['image'];
+
 // echo $pname;
 }else {
 }
@@ -374,19 +375,68 @@ if(isset($_REQUEST["view"]) && isset($_REQUEST["view"]) != "")
                             <?php echo $desc;?></p>
 
                           <p><strong>Ingredients:</strong>5 tiger shrimps, garlic, butter, lemon, herbs, 5 tiger shrimps, garlic, butter, lemon, herbs</p>
-                        </div> 
+                        </div>
 
-                        <div class="price-option">
+                        <?php
+
+                        include("libs/config.php");
+                       if(isset($_POST['submit']))
+
+                       {
+                 $product_name=$_POST['product_name'];
+
+                                 $image=$_POST['image'];
+                                  $price=$_POST['price'];
+                                  $quantity=$_POST['quantity'];
+                 $check=mysqli_query($conn,"select * from cart where product_name='$product_name'");
+                 if(mysqli_num_rows($check)>0){
+                 echo "<script>alert('product allready in cart ')</script>";
+                  
+
+                 }else{
+
+
+
+
+                  $sql=mysqli_query($conn,"insert into cart (product_name,image,price,quantity ) values ('$product_name','$image','$price','$quantity')");
+                   if($sql)
+                   {
+                    echo "<script>alert('product added to cart succesfully ')</script>";
+                   }
+                       }
+}
+
+
+                         ?> 
+ <form method ="post" enctype="multipart/form-data" >
+
+  <input type ="hidden"  name="product_name" value="<?php echo $pname;?>" >
+    <input type ="hidden"  name="image" value="<?php echo $img;?>" >
+<input type ="hidden"  name="price" value="<?php echo $pprice;?>" >
+<input type="text" name="quantity" value="1">
+
+<center>
+<input type="submit" name="submit" value="add to cart">
+
+</center>
+</form>
+
+
+                        <!-- <center><button style="height:30px; width:50px;"><a href="cart.php"><i class="fa fa-shopping-cart" style=" color:red;  height:40px; width:40px;"></i></a>
+                            <b>AddToCart</b></button></center> -->
+   
+
+
+</center>                        <div class="price-option">
                           <h4>$ <?php echo $pprice;?></h4>
                           <button class="toggle">Option</button>
                         </div>
                         <!-- end .price-option-->
                         <div class="qty-cart text-center clearfix">
                           <h6>Qty</h6>
-                          <form class="">
-                            <input type="text" placeholder="1">
-                            <button><i class="fa fa-shopping-cart"></i>
-                            </button>
+                            
+                            <button><a href="cart.php"><i class="fa fa-shopping-cart"></i>
+                            </a></button>
                           </form>
                         </div>
                       </div>

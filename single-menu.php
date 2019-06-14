@@ -313,6 +313,7 @@ if(isset($_REQUEST["view"]) && isset($_REQUEST["view"]) != "")
                             
                             <a class="btn btn-default-red">Confirm</a>
                             <a class="btn btn-default-black">Cancle</a>
+                            <a class="btn btn-default-black">addToCart</a>
                           </form>
                         </div>
                         <!--end .dropdown-details-->
@@ -346,6 +347,10 @@ if(isset($_REQUEST["view"]) && isset($_REQUEST["view"]) != "")
            
               <div class="tab-pane fade" id="tab-2">
                 <p><strong>Description:</strong><br>Phasellus ornare, ante vitae consectetuer consequat, purus sapien ultricies dolor, et mollis pede metus eget nisi. Praesent sodales velit quis augue.</p>
+
+<button><i class="fa fa-shopping-cart"></i>
+                            </button>
+   
               </div> <!-- end .tab-pane  -->
             </div> <!-- end .tab-content -->
           </div>
@@ -353,6 +358,7 @@ if(isset($_REQUEST["view"]) && isset($_REQUEST["view"]) != "")
         </div>
         <!-- end .row -->
       </div>
+      <button class="toggle"><i class="fa fa-shopping-cart"></i>Option</button>
       <!--end .container -->
       <!-- footer begin -->
       <?php include("footer.php"); ?>
